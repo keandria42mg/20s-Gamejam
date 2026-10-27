@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cyehy32og7say"]
+
+[ext_resource type="Script" uid="uid://cgqcpd7rhmuxv" path="res://Scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://byyqr3u2n0qy6" path="res://Scripts/board_view.gd" id="1_jjgbg"]
+
+[node name="Main" type="Node2D" unique_id=1415400249]
+script = ExtResource("1_bo1nx")
+
+[node name="BoardView" type="Node2D" parent="." unique_id=1993815735]
+position = Vector2(320, 40)
+script = ExtResource("1_jjgbg")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1045740099]
+
+[node name="StatusLabel" type="Label" parent="UI" unique_id=72811250]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 60.0
+offset_bottom = 43.0
+text = "Status"
+
+[node name="UndoButton" type="Button" parent="UI" unique_id=1708244889]
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 70.0
+offset_bottom = 111.0
+text = "Undo"
+
+[node name="ResetButton" type="Button" parent="UI" unique_id=583099737]
+offset_left = 20.0
+offset_top = 130.0
+offset_right = 71.0
+offset_bottom = 161.0
+text = "Reset"
+
+[node name="NextButton" type="Button" parent="UI" unique_id=780201770]
+offset_left = 20.0
+offset_top = 180.0
+offset_right = 72.0
+offset_bottom = 211.0
+text = "Next"
+
+[node name="BGLayer" type="CanvasLayer" parent="." unique_id=1546035451]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="BGLayer" unique_id=1352943362]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.050980393, 0.07450981, 0.08235294, 1)

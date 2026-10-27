@@ -1,0 +1,10 @@
+{
+	"name": "First Bite",
+	"time_limit": 20,
+	"max_moves": 2,
+	"pieces": [
+	{ "type": "PAWN",   "side": "PLAYER", "x": 3, "y": 6 },
+	{ "type": "KNIGHT", "side": "ENEMY",  "x": 4, "y": 5 },
+	{ "type": "ROOK",   "side": "ENEMY",  "x": 5, "y": 3 }
+  ]
+}

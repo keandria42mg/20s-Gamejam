@@ -1,0 +1,11 @@
+{
+	"name": "Rook Rampage",
+	"time_limit": 20,
+	"max_moves": 4,
+	"pieces": [
+	{ "type": "KNIGHT", "side": "PLAYER", "x": 1, "y": 7 },
+	{ "type": "ROOK",   "side": "ENEMY",  "x": 2, "y": 5 },
+	{ "type": "BISHOP", "side": "ENEMY",  "x": 2, "y": 2 },
+	{ "type": "PAWN",   "side": "ENEMY",  "x": 6, "y": 2 }
+  ]
+}
