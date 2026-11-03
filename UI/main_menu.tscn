@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://crw8jn33jxh3y"]
+
+[ext_resource type="Script" uid="uid://diwxookvaxwbp" path="res://UI/main_menu.gd" id="1_cafmx"]
+[ext_resource type="Shader" uid="uid://cucm8o2butys2" path="res://Shaders/bg.gdshader" id="1_p8ccj"]
+[ext_resource type="Script" uid="uid://bciq2vtyov04r" path="res://UI/floating_pieces.gd" id="2_tk8dj"]
+[ext_resource type="Texture2D" uid="uid://vg5hc234vanp" path="res://Assets/pieces/pawn.png" id="3_k0a0m"]
+[ext_resource type="Texture2D" uid="uid://ric6mtb8mhaf" path="res://Assets/pieces/bishop.png" id="4_2mudq"]
+[ext_resource type="Texture2D" uid="uid://clk1epr1r740a" path="res://Assets/pieces/king.png" id="5_cafmx"]
+[ext_resource type="Texture2D" uid="uid://0ocx6rgexo4v" path="res://Assets/pieces/knight.png" id="6_tcix6"]
+[ext_resource type="Texture2D" uid="uid://3uq8yydltcb2" path="res://Assets/pieces/queen.png" id="7_mmlvu"]
+[ext_resource type="Texture2D" uid="uid://dfmccmmwo7s7f" path="res://Assets/pieces/rook.png" id="8_aorne"]
+[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/Newcastle SoliD.ttf" id="9_2mudq"]
+[ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/BavarianCrownBoldPersonalBold-x3gXq.otf" id="11_mmlvu"]
+[ext_resource type="Script" uid="uid://djke76nauekkg" path="res://Scripts/button.gd" id="11_tcix6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cafmx"]
+
+[sub_resource type="Theme" id="Theme_cafmx"]
+Button/styles/hover = SubResource("StyleBoxFlat_cafmx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tk8dj"]
+shader = ExtResource("1_p8ccj")
+shader_parameter/color_a = Color(0.050980393, 0.07450981, 0.08235294, 1)
+shader_parameter/color_b = Color(0.08309529, 0.121072166, 0.22071537, 1)
+shader_parameter/tiles = Vector2(16, 9)
+shader_parameter/speed = Vector2(0.4, 0.4)
+
+[node name="MainMenu" type="Control" unique_id=1010189129]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cafmx")
+script = ExtResource("1_cafmx")
+
+[node name="BG" type="ColorRect" parent="." unique_id=1541724392]
+material = SubResource("ShaderMaterial_tk8dj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FloatingPieces" type="Control" parent="." unique_id=287424339]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_tk8dj")
+piece_textures = Array[Texture2D]([ExtResource("3_k0a0m"), ExtResource("4_2mudq"), ExtResource("5_cafmx"), ExtResource("6_tcix6"), ExtResource("7_mmlvu"), ExtResource("8_aorne")])
+piece_count = 45
+piece_size = 50.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=857514753]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1944500938]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1839434777]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("9_2mudq")
+theme_override_font_sizes/normal_font_size = 120
+bbcode_enabled = true
+text = "[color=#4a90d9]G[/color][color=#f5ecd7]AMBEA[/color][color=d94a4a]T[/color]"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=451079251]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=780134207]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 56)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_mmlvu")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+script = ExtResource("11_tcix6")
+gold = Color(0.20872402, 0.7488484, 0.857154, 1)
+fill_hover = Color(0.04379181, 0.36533517, 0.71291155, 1)
+fill_pressed = Color(9.932984e-06, 0.041956164, 0.20727468, 1)
+
+[node name="OptionsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=23938123]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 56)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_mmlvu")
+theme_override_font_sizes/font_size = 24
+text = "Options"
+script = ExtResource("11_tcix6")
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1919325114]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 56)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("11_mmlvu")
+theme_override_font_sizes/font_size = 24
+text = "Quit"
+script = ExtResource("11_tcix6")
+fill_hover = Color(0.68235296, 0, 0, 1)
+fill_pressed = Color(0.26990935, 0.0040074023, 0.047847502, 1)
+
+[node name="Fade" type="ColorRect" parent="." unique_id=841424274]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

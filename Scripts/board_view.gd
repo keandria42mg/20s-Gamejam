@@ -1,7 +1,7 @@
 extends Node2D
 
 const TILE := 80
-const LIGHT := Color("#0F172C")
+const LIGHT := Color("#151f38")
 const DARK := Color("#0D1315")
 const PLAYER_COLOR := Color("#4a90d9")
 const ENEMY_COLOR := Color("#d94a4a")
@@ -31,8 +31,8 @@ const MOVE_TIME := 0.25
 const POP_TIME := 0.3
 
 var anim_time := 0.0
-var move_anim := {}          # the slide in progress (empty = none)
-var pops := {}               # Vector2i -> remaining pop time
+var move_anim := {}
+var pops := {}
 var particles: Array = []
 var shake := 0.0
 

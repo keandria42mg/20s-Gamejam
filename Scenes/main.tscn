@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cgqcpd7rhmuxv" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byyqr3u2n0qy6" path="res://Scripts/board_view.gd" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://djke76nauekkg" path="res://Scripts/button.gd" id="3_8gbba"]
+[ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/BavarianCrownBoldPersonalBold-x3gXq.otf" id="3_jjvhh"]
+[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/Newcastle SoliD.ttf" id="3_kry3j"]
+[ext_resource type="FontFile" uid="uid://d205de8lt2gk0" path="res://Assets/Attack Of Monster.ttf" id="6_21xkr"]
 
 [node name="Main" type="Node2D" unique_id=1415400249]
 script = ExtResource("1_bo1nx")
@@ -12,33 +16,89 @@ script = ExtResource("1_jjgbg")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1045740099]
 
-[node name="StatusLabel" type="Label" parent="UI" unique_id=72811250]
+[node name="StatusLabel" type="Label" parent="UI" unique_id=480532777]
 offset_left = 20.0
 offset_top = 20.0
-offset_right = 60.0
+offset_right = 69.0
 offset_bottom = 43.0
 text = "Status"
 
 [node name="UndoButton" type="Button" parent="UI" unique_id=1708244889]
 offset_left = 20.0
-offset_top = 80.0
+offset_top = 100.0
 offset_right = 70.0
-offset_bottom = 111.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("3_jjvhh")
 text = "Undo"
+script = ExtResource("3_8gbba")
+fill_hover = Color(0.8666667, 0.8745098, 0, 1)
 
 [node name="ResetButton" type="Button" parent="UI" unique_id=583099737]
 offset_left = 20.0
-offset_top = 130.0
+offset_top = 200.0
 offset_right = 71.0
-offset_bottom = 161.0
+offset_bottom = 231.0
+theme_override_fonts/font = ExtResource("3_jjvhh")
 text = "Reset"
+script = ExtResource("3_8gbba")
+fill_hover = Color(0.801252, 8.887343e-05, 4.8323272e-05, 1)
 
 [node name="NextButton" type="Button" parent="UI" unique_id=780201770]
-offset_left = 20.0
-offset_top = 180.0
-offset_right = 72.0
-offset_bottom = 211.0
-text = "Next"
+offset_left = 999.0
+offset_top = 625.0
+offset_right = 1051.0
+offset_bottom = 656.0
+theme_override_fonts/font = ExtResource("3_jjvhh")
+text = "Next >>"
+script = ExtResource("3_8gbba")
+gold = Color(0.22238314, 0.82053065, 0.44611955, 1)
+fill = Color(0.017738445, 0.5893424, 0.40032327, 1)
+fill_hover = Color(0.022286126, 0.687966, 0.51169634, 1)
+fill_pressed = Color(0, 0.24943793, 0.23470888, 1)
+
+[node name="LevelTitle" type="RichTextLabel" parent="UI" unique_id=1152966520]
+offset_left = 1060.0
+offset_top = 312.0
+offset_right = 1222.0
+offset_bottom = 400.0
+theme_override_fonts/normal_font = ExtResource("3_kry3j")
+theme_override_font_sizes/normal_font_size = 45
+text = "TITLE"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Time" type="RichTextLabel" parent="UI" unique_id=1627720415]
+offset_left = 1105.0
+offset_top = 24.0
+offset_right = 1267.0
+offset_bottom = 112.0
+theme_override_fonts/normal_font = ExtResource("6_21xkr")
+theme_override_font_sizes/normal_font_size = 45
+text = "TIME"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Solved" type="RichTextLabel" parent="UI" unique_id=346108137]
+visible = false
+modulate = Color(0.3764706, 0.9372549, 0.72156864, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -63.5
+offset_right = 197.5
+offset_bottom = 63.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("6_21xkr")
+theme_override_font_sizes/normal_font_size = 128
+text = "SOLVED"
+fit_content = true
+autowrap_mode = 0
 
 [node name="BGLayer" type="CanvasLayer" parent="." unique_id=1546035451]
 layer = -1
@@ -50,4 +110,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0.050980393, 0.07450981, 0.08235294, 1)
+color = Color(0.06356264, 0.08985258, 0.098616324, 1)
