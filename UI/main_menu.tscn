@@ -145,6 +145,15 @@ script = ExtResource("11_tcix6")
 fill_hover = Color(0.68235296, 0, 0, 1)
 fill_pressed = Color(0.26990935, 0.0040074023, 0.047847502, 1)
 
+[node name="Tips" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1161851944]
+visible = false
+layout_mode = 2
+bbcode_enabled = true
+text = "[b][pulse]Tips : You Are What You Eat[/pulse]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Fade" type="ColorRect" parent="." unique_id=841424274]
 unique_name_in_owner = true
 visible = false

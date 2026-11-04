@@ -9,6 +9,7 @@ const GAME_SCENE := "res://Scenes/main.tscn"
 @onready var quit_sound: AudioStreamPlayer = $QuitSound
 @onready var credit: PanelContainer = $credit
 @onready var center_container: CenterContainer = $CenterContainer
+@onready var tips: RichTextLabel = $CenterContainer/VBoxContainer/Tips
 
 var _hover_tweens := {}
 
@@ -36,7 +37,6 @@ func _ready() -> void:
 	_play_intro()
 
 func _play_intro() -> void:
-	
 	fade.modulate.a = 1.0
 	create_tween().tween_property(fade, "modulate:a", 0.0, 0.6)
 
@@ -55,6 +55,7 @@ func _play_intro() -> void:
 		bt.tween_property(b, "modulate:a", 1.0, 0.35)
 		bt.tween_property(b, "scale", Vector2.ONE, 0.45)
 		await get_tree().create_timer(0.12).timeout
+		tips.visible = true
 
 func _pulse_title() -> void:
 	var tw := create_tween().set_loops()
