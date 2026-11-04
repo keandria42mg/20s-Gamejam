@@ -2,10 +2,16 @@ extends Node
 
 const PLAYLIST := [
 	"res://Assets/sounds and musics/Main.mp3",
+	"res://Assets/sounds and musics/knight advance.mp3",
+	"res://Assets/sounds and musics/bishop.mp3",
+	"res://Assets/sounds and musics/bishopauthentics.mp3",
 	"res://Assets/sounds and musics/defeat.mp3",
+	"res://Assets/sounds and musics/queenside.mp3",
+	"res://Assets/sounds and musics/pawn.mp3",
+	"res://Assets/sounds and musics/final_check.mp3",
 	"res://Assets/sounds and musics/Final.mp3",
 ]
-const LEVELS_PER_TRACK := 6
+const LEVELS_PER_TRACK := 4
 const FADE_TIME := 1.5
 const VOLUME_DB := -8.0
 
@@ -20,7 +26,7 @@ func _ready() -> void:
 	for p in [player_a, player_b]:
 		p.volume_db = -80.0
 		add_child(p)
-		p.finished.connect(p.play)    # loop fallback if import Loop is off
+		p.finished.connect(p.play)
 	active = player_a
 
 
@@ -29,9 +35,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		for p in [player_a, player_b]:
 			p.stream_paused = not p.stream_paused
 
-
-# Which track belongs to this level. Only tracks that exist are used,
-# and the list wraps around if there are more groups than tracks.
 func track_for_level(level: int) -> String:
 	var available: Array[String] = []
 	for path in PLAYLIST:
@@ -67,7 +70,6 @@ func play_for_level(level: int) -> void:
 	tw.tween_property(old, "volume_db", -80.0, FADE_TIME)
 	tw.chain().tween_callback(old.stop)
 
-
 func set_tension(on: bool) -> void:
 	if on == tense:
 		return
@@ -76,3 +78,15 @@ func set_tension(on: bool) -> void:
 	var tw := create_tween().set_parallel(true)
 	for p in [player_a, player_b]:
 		tw.tween_property(p, "pitch_scale", target, 0.8)
+
+func stop_music(fade := 1.0) -> void:
+	if current_path == "":
+		return
+	current_path = ""
+	var tw := create_tween().set_parallel(true)
+	for p in [player_a, player_b]:
+		if p.playing:
+			tw.tween_property(p, "volume_db", -80.0, fade)
+	tw.chain().tween_callback(func():
+		player_a.stop()
+		player_b.stop())

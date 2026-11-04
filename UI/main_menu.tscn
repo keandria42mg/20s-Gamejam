@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://0ocx6rgexo4v" path="res://Assets/pieces/knight.png" id="6_tcix6"]
 [ext_resource type="Texture2D" uid="uid://3uq8yydltcb2" path="res://Assets/pieces/queen.png" id="7_mmlvu"]
 [ext_resource type="Texture2D" uid="uid://dfmccmmwo7s7f" path="res://Assets/pieces/rook.png" id="8_aorne"]
-[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/fonts/Newcastle SoliD.ttf" id="9_2mudq"]
+[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/fonts/Newcastle SoliD.ttf" id="10_voib7"]
 [ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/fonts/BavarianCrownBoldPersonalBold-x3gXq.otf" id="11_mmlvu"]
 [ext_resource type="Script" uid="uid://djke76nauekkg" path="res://Scripts/button.gd" id="11_tcix6"]
 [ext_resource type="AudioStream" uid="uid://bbxkahy0w5yhi" path="res://Assets/sounds and musics/MainMenu.mp3" id="13_aorne"]
@@ -98,16 +98,17 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Title" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1839434777]
+[node name="Title" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=25052425]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/normal_font = ExtResource("9_2mudq")
+theme_override_fonts/normal_font = ExtResource("10_voib7")
 theme_override_font_sizes/normal_font_size = 120
 bbcode_enabled = true
-text = "[color=#4a90d9]G[/color][color=#f5ecd7]AMBEA[/color][color=d94a4a]T[/color]"
+text = "[color=#4a90d9]G[/color]AM[color=yellow]B[/color]EA[color=#d94a4a]T[/color]"
 fit_content = true
 autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=451079251]
 layout_mode = 2
@@ -146,6 +147,7 @@ fill_pressed = Color(0.26990935, 0.0040074023, 0.047847502, 1)
 
 [node name="Fade" type="ColorRect" parent="." unique_id=841424274]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,3 +179,106 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="credit" type="PanelContainer" parent="." unique_id=1068338345]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -308.5
+offset_right = 368.0
+offset_bottom = 308.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="credit" unique_id=652226509]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="credit/CenterContainer" unique_id=1967598445]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Credits" type="RichTextLabel" parent="credit/CenterContainer/VBoxContainer" unique_id=365678581]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_voib7")
+theme_override_font_sizes/normal_font_size = 64
+text = "CREDITS"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="credit/CenterContainer/VBoxContainer" unique_id=1315846601]
+layout_mode = 2
+
+[node name="Design" type="RichTextLabel" parent="credit/CenterContainer/VBoxContainer" unique_id=751397216]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]DEVELOPPEMENT & DESIGN[/b]
+created entirely by dokja54"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="RichTextLabel" parent="credit/CenterContainer/VBoxContainer" unique_id=254218371]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]MUSIC & SOUND[/b]
+dokja54"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Assets" type="RichTextLabel" parent="credit/CenterContainer/VBoxContainer" unique_id=140001318]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]ASSETS[/b]
+[b]Graphics[/b] : 
+Joszs - Chess Pieces and Board Pack[https://joszs.itch.io/chess-pack]
+[b]Fonts[/b] : 
+-\"Attack Of Monster\" by Tokokoo
+-\"Bavarian Crown\" by Måns Grebäck
+-\"Newcastle\" by  Woodcutter"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Engine" type="RichTextLabel" parent="credit/CenterContainer/VBoxContainer" unique_id=1134510336]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]ENGINE[/b]
+Godot engine"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thanks" type="RichTextLabel" parent="credit/CenterContainer/VBoxContainer" unique_id=407462633]
+layout_mode = 2
+bbcode_enabled = true
+text = "[b]SPECIAL THANKS[/b]
+Thanks to all the asset creators for sharing their amazing work.
+Made for 20 second gamejam—2026
+
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="back" type="Button" parent="credit/CenterContainer/VBoxContainer" unique_id=937153088]
+layout_mode = 2
+text = "back"
+script = ExtResource("11_tcix6")
+
+[node name="Control" type="Control" parent="credit/CenterContainer/VBoxContainer" unique_id=489997683]
+layout_mode = 2
+
+[connection signal="pressed" from="credit/CenterContainer/VBoxContainer/back" to="." method="_on_back_pressed"]

@@ -12,6 +12,10 @@ extends Node2D
 @onready var undo_button: ChessButton = $UI/UndoButton
 @onready var reset_button: ChessButton = $UI/ResetButton
 @onready var next_button: ChessButton = $UI/NextButton
+@onready var green: CPUParticles2D = $UI/Confetti/Green
+@onready var red: CPUParticles2D = $UI/Confetti/Red
+@onready var yellow: CPUParticles2D = $UI/Confetti/Yellow
+@onready var white: CPUParticles2D = $UI/Confetti/White
 
 var is_paused := false
 
@@ -24,7 +28,7 @@ func _ready() -> void:
 	yes.pressed.connect(quit_game)
 	no.pressed.connect(resume_game)
 	if has_node("UI/NextButton"):
-		$UI/NextButton.pressed.connect(board_view.next_level)
+		next_button.pressed.connect(board_view.next_level)
 
 func _process(_delta: float) -> void:
 	var t := "%.1f" % board_view.time_left
@@ -34,14 +38,16 @@ func _process(_delta: float) -> void:
 	level_title.text = title
 	time.text = t
 	move_label.text = m
+	
 	if board_view.puzzle_won:
-		solved.self_modulate = Color.GREEN
-		solved.text = "Solved!"
+		solved.modulate = Color.LIGHT_GREEN
+		solved.text = "[rainbow freq=1.0]Solved![/rainbow]"
 		solved.visible = true
 		undo_button.disabled = true
+
 	elif board_view.puzzle_lost:
-		solved.self_modulate = Color.RED
-		solved.text = board_view.lose_reason
+		solved.modulate = Color.INDIAN_RED
+		solved.text = "[shake]" + board_view.lose_reason + "[/shake]"
 		solved.visible = true
 		undo_button.disabled = true
 

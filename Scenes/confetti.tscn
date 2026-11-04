@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://c0bhp2aa3p1g4"]
+
+[sub_resource type="Curve" id="Curve_yym3c"]
+_data = [Vector2(0.018018015, 0.15730345), 0.0, 0.0, 0, 0, Vector2(1, 0.34831464), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Confetti" type="Node2D" unique_id=1230790852]
+
+[node name="Green" type="CPUParticles2D" parent="." unique_id=903189755]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.0
+initial_velocity_max = 130.0
+angular_velocity_min = 280.0
+angular_velocity_max = 280.0
+linear_accel_min = 11.0
+linear_accel_max = 11.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_yym3c")
+color = Color(0, 1, 0.6392157, 1)
+
+[node name="Red" type="CPUParticles2D" parent="." unique_id=1182194379]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.0
+initial_velocity_max = 130.0
+angular_velocity_min = 280.0
+angular_velocity_max = 280.0
+linear_accel_min = 11.0
+linear_accel_max = 11.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_yym3c")
+color = Color(1, 0.49145454, 0.44956774, 1)
+
+[node name="Yellow" type="CPUParticles2D" parent="." unique_id=1968440472]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.0
+initial_velocity_max = 130.0
+angular_velocity_min = 280.0
+angular_velocity_max = 280.0
+linear_accel_min = 11.0
+linear_accel_max = 11.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_yym3c")
+color = Color(1, 1, 0.38431373, 1)
+
+[node name="White" type="CPUParticles2D" parent="." unique_id=62859090]
+emitting = false
+amount = 30
+one_shot = true
+explosiveness = 0.6
+randomness = 0.2
+local_coords = true
+direction = Vector2(0, -1)
+gravity = Vector2(0, 100)
+initial_velocity_min = 65.0
+initial_velocity_max = 130.0
+angular_velocity_min = 280.0
+angular_velocity_max = 280.0
+linear_accel_min = 11.0
+linear_accel_max = 11.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_yym3c")

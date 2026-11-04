@@ -14,6 +14,7 @@ const PIECE_NAMES := ["Pawn", "Knight", "Bishop", "Rook", "Queen", "King"]
 @onready var undo_button: ChessButton = $"../UI/UndoButton"
 @onready var move_sound: AudioStreamPlayer = $"../MoveSound"
 @onready var capture_sound: AudioStreamPlayer = $"../CaptureSound"
+@onready var main: Node2D = $".."
 
 var hover_cell := Vector2i(-1, -1)
 var textures: Array[Texture2D] = []

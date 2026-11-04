@@ -7,10 +7,13 @@ const GAME_SCENE := "res://Scenes/main.tscn"
 @onready var buttons: Array[Button] = [%PlayButton, %OptionsButton, %QuitButton]
 @onready var press_sound: AudioStreamPlayer = $PressSound
 @onready var quit_sound: AudioStreamPlayer = $QuitSound
+@onready var credit: PanelContainer = $credit
+@onready var center_container: CenterContainer = $CenterContainer
 
 var _hover_tweens := {}
 
 func _ready() -> void:
+	Music.stop_music()
 	await get_tree().process_frame
 
 	for b in buttons:
@@ -73,7 +76,8 @@ func _on_play() -> void:
 	_change_scene(GAME_SCENE)
 
 func _on_options() -> void:
-	print("Open options")
+	credit.visible = true
+	center_container.visible = false
 
 func _on_quit() -> void:
 	quit_sound.play()
@@ -88,3 +92,7 @@ func _change_scene(path: String) -> void:
 	tw.tween_property(fade, "modulate:a", 1.0, 0.8)
 	await tw.finished
 	get_tree().change_scene_to_file(path)
+
+func _on_back_pressed() -> void:
+	credit.visible = false
+	center_container.visible = true

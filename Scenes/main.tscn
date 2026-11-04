@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/fonts/BavarianCrownBoldPersonalBold-x3gXq.otf" id="3_jjvhh"]
 [ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/fonts/Newcastle SoliD.ttf" id="3_kry3j"]
 [ext_resource type="FontFile" uid="uid://d205de8lt2gk0" path="res://Assets/fonts/Attack Of Monster.ttf" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://c0bhp2aa3p1g4" path="res://Scenes/confetti.tscn" id="7_d1ilt"]
 [ext_resource type="AudioStream" uid="uid://hf6iitb57b1y" path="res://Assets/sounds and musics/WoodKnock12.wav" id="8_344ge"]
 [ext_resource type="AudioStream" uid="uid://djtr0mvslhkwb" path="res://Assets/sounds and musics/WetSplat18.wav" id="9_ynf5e"]
 [ext_resource type="Texture2D" uid="uid://dpxdi8utkwfi1" path="res://Assets/star_particle.png" id="10_hptm8"]
@@ -212,6 +213,10 @@ theme_override_fonts/font = ExtResource("3_jjvhh")
 text = "No"
 script = ExtResource("3_8gbba")
 
+[node name="Confetti" parent="UI" unique_id=1230790852 instance=ExtResource("7_d1ilt")]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+
 [node name="BGLayer" type="CanvasLayer" parent="." unique_id=1546035451]
 layer = -1
 
@@ -240,7 +245,7 @@ volume_db = -10.0
 [node name="DustParticles" type="GPUParticles2D" parent="Visual" unique_id=1790921831]
 z_index = 99
 position = Vector2(640, 360)
-amount = 50
+amount = 70
 texture = ExtResource("10_hptm8")
 lifetime = 6.0
 process_material = SubResource("ParticleProcessMaterial_hptm8")

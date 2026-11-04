@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/WetSplat18.wav-62f2e2cd06ac94be584f9ac0047f2e
 
 [params]
 
-force/8_bit=false
-force/mono=false
+force/8_bit=true
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
