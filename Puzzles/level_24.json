@@ -1,0 +1,61 @@
+{
+  "name": "Cannibal Kingdom",
+  "time_limit": 20,
+  "max_moves": 11,
+  "pieces": [
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 7,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 2
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 0
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 2
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 7
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 7
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 7,
+	  "y": 3
+	}
+  ]
+}

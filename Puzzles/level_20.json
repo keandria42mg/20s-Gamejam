@@ -1,0 +1,55 @@
+{
+  "name": "Last Supper",
+  "time_limit": 20,
+  "max_moves": 10,
+  "pieces": [
+	{
+	  "type": "ROOK",
+	  "side": "PLAYER",
+	  "x": 1,
+	  "y": 1
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 0
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 2
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 1
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 7
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 1
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 2
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 7,
+	  "y": 2
+	}
+  ]
+}

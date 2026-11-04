@@ -1,0 +1,55 @@
+{
+  "name": "Metamorphosis",
+  "time_limit": 20,
+  "max_moves": 11,
+  "pieces": [
+	{
+	  "type": "ROOK",
+	  "side": "PLAYER",
+	  "x": 7,
+	  "y": 7
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 4
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 7
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 2
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 7
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 7
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 4
+	}
+  ]
+}

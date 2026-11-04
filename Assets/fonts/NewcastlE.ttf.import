@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://d205de8lt2gk0"
-path="res://.godot/imported/Attack Of Monster.ttf-53683c2723d1dd565c4d7ecc6a55acc2.fontdata"
+uid="uid://upab4ruwewii"
+path="res://.godot/imported/NewcastlE.ttf-c9a2437c5bfae01de84fbd3746df762e.fontdata"
 
 [deps]
 
-source_file="res://Assets/Attack Of Monster.ttf"
-dest_files=["res://.godot/imported/Attack Of Monster.ttf-53683c2723d1dd565c4d7ecc6a55acc2.fontdata"]
+source_file="res://Assets/fonts/NewcastlE.ttf"
+dest_files=["res://.godot/imported/NewcastlE.ttf-c9a2437c5bfae01de84fbd3746df762e.fontdata"]
 
 [params]
 

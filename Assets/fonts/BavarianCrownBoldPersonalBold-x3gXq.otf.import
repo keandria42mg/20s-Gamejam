@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://om5e5jpex4lq"
-path="res://.godot/imported/Newcastle SoliD.ttf-b759fc218b80f8c33671cbe794b07d1a.fontdata"
+uid="uid://dhrmpcou17lua"
+path="res://.godot/imported/BavarianCrownBoldPersonalBold-x3gXq.otf-d26566f4f4f6d80a930fcad06cc82786.fontdata"
 
 [deps]
 
-source_file="res://Assets/Newcastle SoliD.ttf"
-dest_files=["res://.godot/imported/Newcastle SoliD.ttf-b759fc218b80f8c33671cbe794b07d1a.fontdata"]
+source_file="res://Assets/fonts/BavarianCrownBoldPersonalBold-x3gXq.otf"
+dest_files=["res://.godot/imported/BavarianCrownBoldPersonalBold-x3gXq.otf-d26566f4f4f6d80a930fcad06cc82786.fontdata"]
 
 [params]
 

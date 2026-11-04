@@ -1,0 +1,43 @@
+{
+  "name": "Zig and Zag",
+  "time_limit": 20,
+  "max_moves": 8,
+  "pieces": [
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 2,
+	  "y": 2
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 3
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 4
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 5
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 3
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 7
+	}
+  ]
+}

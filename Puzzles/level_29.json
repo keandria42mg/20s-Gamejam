@@ -1,0 +1,61 @@
+{
+  "name": "Final Feast",
+  "time_limit": 20,
+  "max_moves": 13,
+  "pieces": [
+	{
+	  "type": "PAWN",
+	  "side": "PLAYER",
+	  "x": 0,
+	  "y": 3
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 4
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 7
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 1
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 2
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 0
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 6
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 7,
+	  "y": 1
+	}
+  ]
+}

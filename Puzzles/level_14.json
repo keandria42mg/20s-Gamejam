@@ -1,0 +1,49 @@
+{
+  "name": "Pawn Storm",
+  "time_limit": 20,
+  "max_moves": 8,
+  "pieces": [
+	{
+	  "type": "KNIGHT",
+	  "side": "PLAYER",
+	  "x": 2,
+	  "y": 1
+	},
+	{
+	  "type": "PAWN",
+	  "side": "PLAYER",
+	  "x": 7,
+	  "y": 1
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 3
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 7
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 0
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 6
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 2
+	}
+  ]
+}

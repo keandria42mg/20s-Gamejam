@@ -13,7 +13,6 @@ func in_bounds(pos: Vector2i) -> bool:
 func add_piece(pos: Vector2i, piece: Piece) -> void:
 	cells[pos] = piece
 
-# The core rule: you become what you eat.
 func apply_move(from: Vector2i, to: Vector2i) -> void:
 	var mover: Piece = cells[from]
 	var victim: Piece = cells.get(to)
@@ -22,7 +21,6 @@ func apply_move(from: Vector2i, to: Vector2i) -> void:
 		mover.type = victim.type
 	cells[to] = mover
 
-# Snapshot, used later for undo.
 func clone() -> Board:
 	var b := Board.new()
 	b.size = size

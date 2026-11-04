@@ -1,0 +1,43 @@
+{
+  "name": "Long Hunt",
+  "time_limit": 20,
+  "max_moves": 5,
+  "pieces": [
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 5,
+	  "y": 4
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 2
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 4
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 5
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 5
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 5
+	}
+  ]
+}

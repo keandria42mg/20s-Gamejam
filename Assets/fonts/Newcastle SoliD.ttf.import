@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://upab4ruwewii"
-path="res://.godot/imported/NewcastlE.ttf-f705818e29e9d25d218f50736a195594.fontdata"
+uid="uid://om5e5jpex4lq"
+path="res://.godot/imported/Newcastle SoliD.ttf-6f3259f87168bd8eb5abafea62fd013f.fontdata"
 
 [deps]
 
-source_file="res://Assets/NewcastlE.ttf"
-dest_files=["res://.godot/imported/NewcastlE.ttf-f705818e29e9d25d218f50736a195594.fontdata"]
+source_file="res://Assets/fonts/Newcastle SoliD.ttf"
+dest_files=["res://.godot/imported/Newcastle SoliD.ttf-6f3259f87168bd8eb5abafea62fd013f.fontdata"]
 
 [params]
 

@@ -1,0 +1,31 @@
+{
+  "name": "Tight Squeeze",
+  "time_limit": 20,
+  "max_moves": 3,
+  "pieces": [
+	{
+	  "type": "ROOK",
+	  "side": "PLAYER",
+	  "x": 6,
+	  "y": 5
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 1
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 2
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 7,
+	  "y": 5
+	}
+  ]
+}

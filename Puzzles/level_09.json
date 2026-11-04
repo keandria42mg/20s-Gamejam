@@ -1,0 +1,49 @@
+{
+  "name": "Grand Feast",
+  "time_limit": 20,
+  "max_moves": 7,
+  "pieces": [
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 1,
+	  "y": 1
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 4
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 5
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 0
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 3
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 3
+	}
+  ]
+}

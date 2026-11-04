@@ -1,0 +1,49 @@
+{
+  "name": "Royal Banquet",
+  "time_limit": 20,
+  "max_moves": 10,
+  "pieces": [
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 6,
+	  "y": 0
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 0
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 2
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 6
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 7
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 5
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 6
+	}
+  ]
+}

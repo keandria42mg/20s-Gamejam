@@ -1,0 +1,37 @@
+{
+  "name": "Chain Reaction",
+  "time_limit": 20,
+  "max_moves": 4,
+  "pieces": [
+	{
+	  "type": "ROOK",
+	  "side": "PLAYER",
+	  "x": 0,
+	  "y": 7
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 5
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 5
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 2,
+	  "y": 7
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 5
+	}
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "Grand Evolution",
+  "time_limit": 20,
+  "max_moves": 12,
+  "pieces": [
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 2,
+	  "y": 4
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 3
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 5
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 6
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 0
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 5
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 6
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 3
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 7,
+	  "y": 5
+	}
+  ]
+}

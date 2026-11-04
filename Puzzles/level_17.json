@@ -1,0 +1,49 @@
+{
+  "name": "Bishop's Maze",
+  "time_limit": 20,
+  "max_moves": 9,
+  "pieces": [
+	{
+	  "type": "ROOK",
+	  "side": "PLAYER",
+	  "x": 1,
+	  "y": 3
+	},
+	{
+	  "type": "PAWN",
+	  "side": "PLAYER",
+	  "x": 6,
+	  "y": 5
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 2
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 7
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 5
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 0
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 7
+	}
+  ]
+}

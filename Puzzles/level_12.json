@@ -1,0 +1,43 @@
+{
+  "name": "The Long Way",
+  "time_limit": 20,
+  "max_moves": 8,
+  "pieces": [
+	{
+	  "type": "ROOK",
+	  "side": "PLAYER",
+	  "x": 2,
+	  "y": 3
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 3,
+	  "y": 5
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 4
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 2
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 3
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 7,
+	  "y": 6
+	}
+  ]
+}

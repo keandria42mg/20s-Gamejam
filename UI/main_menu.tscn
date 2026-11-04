@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://crw8jn33jxh3y"]
 
-[ext_resource type="Script" uid="uid://diwxookvaxwbp" path="res://UI/main_menu.gd" id="1_cafmx"]
+[ext_resource type="Script" uid="uid://diwxookvaxwbp" path="res://Scripts/main_menu.gd" id="1_cafmx"]
 [ext_resource type="Shader" uid="uid://cucm8o2butys2" path="res://Shaders/bg.gdshader" id="1_p8ccj"]
-[ext_resource type="Script" uid="uid://bciq2vtyov04r" path="res://UI/floating_pieces.gd" id="2_tk8dj"]
+[ext_resource type="Script" uid="uid://bciq2vtyov04r" path="res://Scripts/floating_pieces.gd" id="2_tk8dj"]
 [ext_resource type="Texture2D" uid="uid://vg5hc234vanp" path="res://Assets/pieces/pawn.png" id="3_k0a0m"]
 [ext_resource type="Texture2D" uid="uid://ric6mtb8mhaf" path="res://Assets/pieces/bishop.png" id="4_2mudq"]
 [ext_resource type="Texture2D" uid="uid://clk1epr1r740a" path="res://Assets/pieces/king.png" id="5_cafmx"]
 [ext_resource type="Texture2D" uid="uid://0ocx6rgexo4v" path="res://Assets/pieces/knight.png" id="6_tcix6"]
 [ext_resource type="Texture2D" uid="uid://3uq8yydltcb2" path="res://Assets/pieces/queen.png" id="7_mmlvu"]
 [ext_resource type="Texture2D" uid="uid://dfmccmmwo7s7f" path="res://Assets/pieces/rook.png" id="8_aorne"]
-[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/Newcastle SoliD.ttf" id="9_2mudq"]
-[ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/BavarianCrownBoldPersonalBold-x3gXq.otf" id="11_mmlvu"]
+[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/fonts/Newcastle SoliD.ttf" id="9_2mudq"]
+[ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/fonts/BavarianCrownBoldPersonalBold-x3gXq.otf" id="11_mmlvu"]
 [ext_resource type="Script" uid="uid://djke76nauekkg" path="res://Scripts/button.gd" id="11_tcix6"]
+[ext_resource type="AudioStream" uid="uid://bbxkahy0w5yhi" path="res://Assets/sounds and musics/MainMenu.mp3" id="13_aorne"]
+[ext_resource type="AudioStream" uid="uid://djtr0mvslhkwb" path="res://Assets/sounds and musics/WetSplat18.wav" id="14_bpm4f"]
+[ext_resource type="AudioStream" uid="uid://hf6iitb57b1y" path="res://Assets/sounds and musics/WoodKnock12.wav" id="15_7137b"]
+[ext_resource type="Shader" uid="uid://dr6s11xvunli6" path="res://Scenes/postprocess.gdshader" id="16_voib7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cafmx"]
 
@@ -24,6 +28,30 @@ shader_parameter/color_a = Color(0.050980393, 0.07450981, 0.08235294, 1)
 shader_parameter/color_b = Color(0.08309529, 0.121072166, 0.22071537, 1)
 shader_parameter/tiles = Vector2(16, 9)
 shader_parameter/speed = Vector2(0.4, 0.4)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2nhh"]
+shader = ExtResource("16_voib7")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/static_noise_intensity = 0.050000002375
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.10000000475
 
 [node name="MainMenu" type="Control" unique_id=1010189129]
 layout_mode = 3
@@ -102,7 +130,7 @@ custom_minimum_size = Vector2(250, 56)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("11_mmlvu")
 theme_override_font_sizes/font_size = 24
-text = "Options"
+text = "Credits"
 script = ExtResource("11_tcix6")
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1919325114]
@@ -118,7 +146,6 @@ fill_pressed = Color(0.26990935, 0.0040074023, 0.047847502, 1)
 
 [node name="Fade" type="ColorRect" parent="." unique_id=841424274]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,3 +154,26 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MainMennuMusic" type="AudioStreamPlayer" parent="." unique_id=2062303209]
+stream = ExtResource("13_aorne")
+autoplay = true
+
+[node name="PressSound" type="AudioStreamPlayer" parent="." unique_id=77141475]
+stream = ExtResource("15_7137b")
+volume_db = -10.0
+
+[node name="QuitSound" type="AudioStreamPlayer" parent="." unique_id=184878716]
+stream = ExtResource("14_bpm4f")
+volume_db = -10.0
+
+[node name="Postprocess" type="CanvasLayer" parent="." unique_id=1306886961]
+
+[node name="ColorRect" type="ColorRect" parent="Postprocess" unique_id=556551073]
+material = SubResource("ShaderMaterial_t2nhh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

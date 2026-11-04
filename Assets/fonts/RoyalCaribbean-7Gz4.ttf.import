@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://c3m1rqooolkyf"
-path="res://.godot/imported/RoyalCaribbean-7Gz4.ttf-ac8372cfd8befa2f83750bc2d0220e9e.fontdata"
+path="res://.godot/imported/RoyalCaribbean-7Gz4.ttf-c90fe5603db4f60b5ccd5357a2bbc939.fontdata"
 
 [deps]
 
-source_file="res://Assets/RoyalCaribbean-7Gz4.ttf"
-dest_files=["res://.godot/imported/RoyalCaribbean-7Gz4.ttf-ac8372cfd8befa2f83750bc2d0220e9e.fontdata"]
+source_file="res://Assets/fonts/RoyalCaribbean-7Gz4.ttf"
+dest_files=["res://.godot/imported/RoyalCaribbean-7Gz4.ttf-c90fe5603db4f60b5ccd5357a2bbc939.fontdata"]
 
 [params]
 

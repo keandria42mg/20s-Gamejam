@@ -1,0 +1,43 @@
+{
+  "name": "Slow Burn",
+  "time_limit": 20,
+  "max_moves": 7,
+  "pieces": [
+	{
+	  "type": "KING",
+	  "side": "PLAYER",
+	  "x": 6,
+	  "y": 2
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "PLAYER",
+	  "x": 7,
+	  "y": 0
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 5
+	},
+	{
+	  "type": "PAWN",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 5
+	},
+	{
+	  "type": "KNIGHT",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 6
+	},
+	{
+	  "type": "ROOK",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 5
+	}
+  ]
+}

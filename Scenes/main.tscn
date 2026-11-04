@@ -3,9 +3,59 @@
 [ext_resource type="Script" uid="uid://cgqcpd7rhmuxv" path="res://Scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="Script" uid="uid://byyqr3u2n0qy6" path="res://Scripts/board_view.gd" id="1_jjgbg"]
 [ext_resource type="Script" uid="uid://djke76nauekkg" path="res://Scripts/button.gd" id="3_8gbba"]
-[ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/BavarianCrownBoldPersonalBold-x3gXq.otf" id="3_jjvhh"]
-[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/Newcastle SoliD.ttf" id="3_kry3j"]
-[ext_resource type="FontFile" uid="uid://d205de8lt2gk0" path="res://Assets/Attack Of Monster.ttf" id="6_21xkr"]
+[ext_resource type="FontFile" uid="uid://dhrmpcou17lua" path="res://Assets/fonts/BavarianCrownBoldPersonalBold-x3gXq.otf" id="3_jjvhh"]
+[ext_resource type="FontFile" uid="uid://om5e5jpex4lq" path="res://Assets/fonts/Newcastle SoliD.ttf" id="3_kry3j"]
+[ext_resource type="FontFile" uid="uid://d205de8lt2gk0" path="res://Assets/fonts/Attack Of Monster.ttf" id="6_21xkr"]
+[ext_resource type="AudioStream" uid="uid://hf6iitb57b1y" path="res://Assets/sounds and musics/WoodKnock12.wav" id="8_344ge"]
+[ext_resource type="AudioStream" uid="uid://djtr0mvslhkwb" path="res://Assets/sounds and musics/WetSplat18.wav" id="9_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://dpxdi8utkwfi1" path="res://Assets/star_particle.png" id="10_hptm8"]
+[ext_resource type="Shader" uid="uid://dr6s11xvunli6" path="res://Scenes/postprocess.gdshader" id="11_d1ilt"]
+
+[sub_resource type="Curve" id="Curve_hptm8"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.015384555), 0.0, 0.0, 0, 0, Vector2(0.2597015, 1), 0.0, 0.0, 0, 0, Vector2(0.75820893, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_hptm8"]
+curve = SubResource("Curve_hptm8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hptm8"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(640, 360, 1)
+spread = 180.0
+initial_velocity_min = 30.0
+initial_velocity_max = 40.0
+angular_velocity_min = 19.999983
+angular_velocity_max = 39.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.099999994
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_hptm8")
+color = Color(1, 1, 0, 0.49803922)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hptm8"]
+shader = ExtResource("11_d1ilt")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.4
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 8.0
+shader_parameter/roll_size = 15.0
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.0
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/static_noise_intensity = 0.050000002375
+shader_parameter/aberration = 4.7499999933364734e-08
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.10000000475
 
 [node name="Main" type="Node2D" unique_id=1415400249]
 script = ExtResource("1_bo1nx")
@@ -16,12 +66,15 @@ script = ExtResource("1_jjgbg")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1045740099]
 
-[node name="StatusLabel" type="Label" parent="UI" unique_id=480532777]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 69.0
-offset_bottom = 43.0
-text = "Status"
+[node name="MoveLabel" type="RichTextLabel" parent="UI" unique_id=1107985774]
+offset_left = 94.0
+offset_top = 28.0
+offset_right = 143.0
+offset_bottom = 51.0
+theme_override_fonts/normal_font = ExtResource("6_21xkr")
+text = "Moves"
+fit_content = true
+autowrap_mode = 0
 
 [node name="UndoButton" type="Button" parent="UI" unique_id=1708244889]
 offset_left = 20.0
@@ -40,6 +93,16 @@ offset_right = 71.0
 offset_bottom = 231.0
 theme_override_fonts/font = ExtResource("3_jjvhh")
 text = "Reset"
+script = ExtResource("3_8gbba")
+fill_hover = Color(0.91080874, 0.31278473, 0, 1)
+
+[node name="MenuButton" type="Button" parent="UI" unique_id=1397964909]
+offset_left = 20.0
+offset_top = 625.0
+offset_right = 71.0
+offset_bottom = 656.0
+theme_override_fonts/font = ExtResource("3_jjvhh")
+text = "Quit"
 script = ExtResource("3_8gbba")
 fill_hover = Color(0.801252, 8.887343e-05, 4.8323272e-05, 1)
 
@@ -96,9 +159,58 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("6_21xkr")
 theme_override_font_sizes/normal_font_size = 128
-text = "SOLVED"
+bbcode_enabled = true
+text = "[shake]SOLVED"
 fit_content = true
 autowrap_mode = 0
+
+[node name="QuitPanelContainer" type="PanelContainer" parent="UI" unique_id=71017802]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/QuitPanelContainer" unique_id=1132121423]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="RichTextLabel" parent="UI/QuitPanelContainer/VBoxContainer" unique_id=934744169]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("3_jjvhh")
+theme_override_font_sizes/normal_font_size = 32
+text = "Are you sure?"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Separator" type="Control" parent="UI/QuitPanelContainer/VBoxContainer" unique_id=1726692094]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/QuitPanelContainer/VBoxContainer" unique_id=1399884104]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Yes" type="Button" parent="UI/QuitPanelContainer/VBoxContainer/HBoxContainer" unique_id=1236471233]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jjvhh")
+text = "Yes"
+script = ExtResource("3_8gbba")
+fill_hover = Color(0.8, 0, 0, 1)
+
+[node name="No" type="Button" parent="UI/QuitPanelContainer/VBoxContainer/HBoxContainer" unique_id=1528092210]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_jjvhh")
+text = "No"
+script = ExtResource("3_8gbba")
 
 [node name="BGLayer" type="CanvasLayer" parent="." unique_id=1546035451]
 layer = -1
@@ -111,3 +223,36 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.06356264, 0.08985258, 0.098616324, 1)
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="." unique_id=1277978873]
+autoplay = true
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="." unique_id=94614651]
+stream = ExtResource("8_344ge")
+volume_db = -10.0
+
+[node name="CaptureSound" type="AudioStreamPlayer" parent="." unique_id=1986538820]
+stream = ExtResource("9_ynf5e")
+volume_db = -10.0
+
+[node name="Visual" type="Node2D" parent="." unique_id=1188490497]
+
+[node name="DustParticles" type="GPUParticles2D" parent="Visual" unique_id=1790921831]
+z_index = 99
+position = Vector2(640, 360)
+amount = 50
+texture = ExtResource("10_hptm8")
+lifetime = 6.0
+process_material = SubResource("ParticleProcessMaterial_hptm8")
+
+[node name="Postprocess" type="CanvasLayer" parent="." unique_id=352700691]
+
+[node name="ColorRect" type="ColorRect" parent="Postprocess" unique_id=230895269]
+z_index = 99
+material = SubResource("ShaderMaterial_hptm8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

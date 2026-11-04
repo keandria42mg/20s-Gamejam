@@ -1,0 +1,55 @@
+{
+  "name": "Gluttony",
+  "time_limit": 20,
+  "max_moves": 12,
+  "pieces": [
+	{
+	  "type": "PAWN",
+	  "side": "PLAYER",
+	  "x": 2,
+	  "y": 6
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 0,
+	  "y": 0
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 1,
+	  "y": 3
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 0
+	},
+	{
+	  "type": "KING",
+	  "side": "ENEMY",
+	  "x": 4,
+	  "y": 5
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 5,
+	  "y": 5
+	},
+	{
+	  "type": "BISHOP",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 4
+	},
+	{
+	  "type": "QUEEN",
+	  "side": "ENEMY",
+	  "x": 6,
+	  "y": 7
+	}
+  ]
+}

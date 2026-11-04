@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dhrmpcou17lua"
-path="res://.godot/imported/BavarianCrownBoldPersonalBold-x3gXq.otf-106fd94b248fa806ffc48d9467608c09.fontdata"
+uid="uid://d205de8lt2gk0"
+path="res://.godot/imported/Attack Of Monster.ttf-848b3e12ae9a02bf7177b5cddbc8fca3.fontdata"
 
 [deps]
 
-source_file="res://Assets/BavarianCrownBoldPersonalBold-x3gXq.otf"
-dest_files=["res://.godot/imported/BavarianCrownBoldPersonalBold-x3gXq.otf-106fd94b248fa806ffc48d9467608c09.fontdata"]
+source_file="res://Assets/fonts/Attack Of Monster.ttf"
+dest_files=["res://.godot/imported/Attack Of Monster.ttf-848b3e12ae9a02bf7177b5cddbc8fca3.fontdata"]
 
 [params]
 
