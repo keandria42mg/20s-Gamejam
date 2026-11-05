@@ -1,13 +1,13 @@
 {
   "name": "Digest",
   "time_limit": 20,
-  "max_moves": 10,
+  "max_moves": 8,
   "pieces": [
 	{
 	  "type": "PAWN",
 	  "side": "PLAYER",
-	  "x": 4,
-	  "y": 2
+	  "x": 3,
+	  "y": 7
 	},
 	{
 	  "type": "KNIGHT",

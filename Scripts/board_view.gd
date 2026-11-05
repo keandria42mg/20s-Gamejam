@@ -153,7 +153,6 @@ func _clear_animations() -> void:
 	shake = 0.0
 
 func _update_animations(delta: float) -> void:
-	# Slide
 	if not move_anim.is_empty():
 		move_anim["t"] += delta / MOVE_TIME
 		if move_anim["t"] >= 1.0:

@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dpxdi8utkwfi1" path="res://Assets/star_particle.png" id="10_hptm8"]
 [ext_resource type="Shader" uid="uid://dr6s11xvunli6" path="res://Scenes/postprocess.gdshader" id="11_d1ilt"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_583qf"]
+
 [sub_resource type="Curve" id="Curve_hptm8"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1e-05, 0.015384555), 0.0, 0.0, 0, 0, Vector2(0.2597015, 1), 0.0, 0.0, 0, 0, Vector2(0.75820893, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 5
@@ -58,6 +60,9 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.10000000475
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ilt"]
+bg_color = Color(0.050980393, 0.07450981, 0.08235294, 1)
+
 [node name="Main" type="Node2D" unique_id=1415400249]
 script = ExtResource("1_bo1nx")
 
@@ -66,6 +71,40 @@ position = Vector2(320, 40)
 script = ExtResource("1_jjgbg")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1045740099]
+
+[node name="Panel" type="PanelContainer" parent="UI" unique_id=52722759]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1017.0
+offset_right = -49.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxEmpty_583qf")
+
+[node name="LevelTitle" type="RichTextLabel" parent="UI/Panel" unique_id=1152966520]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("3_kry3j")
+theme_override_font_sizes/normal_font_size = 64
+text = "TITLE"
+fit_content = true
+autowrap_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Panel" unique_id=1161718839]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_top = 30
+
+[node name="Time" type="RichTextLabel" parent="UI/Panel/MarginContainer" unique_id=1627720415]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("6_21xkr")
+theme_override_font_sizes/normal_font_size = 45
+text = "TIME"
+fit_content = true
+autowrap_mode = 0
 
 [node name="MoveLabel" type="RichTextLabel" parent="UI" unique_id=1107985774]
 offset_left = 94.0
@@ -119,28 +158,6 @@ gold = Color(0.22238314, 0.82053065, 0.44611955, 1)
 fill = Color(0.017738445, 0.5893424, 0.40032327, 1)
 fill_hover = Color(0.022286126, 0.687966, 0.51169634, 1)
 fill_pressed = Color(0, 0.24943793, 0.23470888, 1)
-
-[node name="LevelTitle" type="RichTextLabel" parent="UI" unique_id=1152966520]
-offset_left = 1060.0
-offset_top = 312.0
-offset_right = 1222.0
-offset_bottom = 400.0
-theme_override_fonts/normal_font = ExtResource("3_kry3j")
-theme_override_font_sizes/normal_font_size = 45
-text = "TITLE"
-fit_content = true
-autowrap_mode = 0
-
-[node name="Time" type="RichTextLabel" parent="UI" unique_id=1627720415]
-offset_left = 1105.0
-offset_top = 24.0
-offset_right = 1267.0
-offset_bottom = 112.0
-theme_override_fonts/normal_font = ExtResource("6_21xkr")
-theme_override_font_sizes/normal_font_size = 45
-text = "TIME"
-fit_content = true
-autowrap_mode = 0
 
 [node name="Solved" type="RichTextLabel" parent="UI" unique_id=346108137]
 visible = false
@@ -261,3 +278,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Victory" type="CanvasLayer" parent="." unique_id=2027190792]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="Victory" unique_id=413877895]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_d1ilt")
+
+[node name="Label" type="Label" parent="Victory/PanelContainer" unique_id=209269565]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_jjvhh")
+theme_override_font_sizes/font_size = 32
+text = "Congratulation!
+You solved all levels.
+It's time to make your own levels."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoTomenuButton" type="Button" parent="Victory" unique_id=1089138543]
+offset_left = 999.0
+offset_top = 625.0
+offset_right = 1051.0
+offset_bottom = 656.0
+theme_override_fonts/font = ExtResource("3_jjvhh")
+text = "Go to menu"
+script = ExtResource("3_8gbba")
+
+[connection signal="pressed" from="Victory/GoTomenuButton" to="." method="_on_go_tomenu_button_pressed"]

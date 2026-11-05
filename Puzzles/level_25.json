@@ -1,7 +1,7 @@
 {
   "name": "Endless Table",
   "time_limit": 20,
-  "max_moves": 11,
+  "max_moves": 10,
   "pieces": [
 	{
 	  "type": "KNIGHT",
@@ -10,10 +10,10 @@
 	  "y": 4
 	},
 	{
-	  "type": "BISHOP",
+	  "type": "KING",
 	  "side": "PLAYER",
-	  "x": 7,
-	  "y": 1
+	  "x": 4,
+	  "y": 4
 	},
 	{
 	  "type": "BISHOP",

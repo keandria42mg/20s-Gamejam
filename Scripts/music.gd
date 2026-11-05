@@ -7,8 +7,6 @@ const PLAYLIST := [
 	"res://Assets/sounds and musics/bishopauthentics.mp3",
 	"res://Assets/sounds and musics/defeat.mp3",
 	"res://Assets/sounds and musics/queenside.mp3",
-	"res://Assets/sounds and musics/pawn.mp3",
-	"res://Assets/sounds and musics/final_check.mp3",
 	"res://Assets/sounds and musics/Final.mp3",
 ]
 const LEVELS_PER_TRACK := 4

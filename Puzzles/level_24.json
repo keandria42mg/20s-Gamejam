@@ -10,6 +10,12 @@
 	  "y": 0
 	},
 	{
+	  "type": "KNIGHT",
+	  "side": "PLAYER",
+	  "x": 7,
+	  "y": 7
+	},
+	{
 	  "type": "QUEEN",
 	  "side": "ENEMY",
 	  "x": 0,

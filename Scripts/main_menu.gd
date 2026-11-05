@@ -4,16 +4,19 @@ const GAME_SCENE := "res://Scenes/main.tscn"
 
 @onready var title: RichTextLabel  = %Title
 @onready var fade: ColorRect = %Fade
-@onready var buttons: Array[Button] = [%PlayButton, %OptionsButton, %QuitButton]
+@onready var buttons: Array[Button] = [%PlayButton, %OptionsButton, %MakeLevelButton, %QuitButton]
 @onready var press_sound: AudioStreamPlayer = $PressSound
 @onready var quit_sound: AudioStreamPlayer = $QuitSound
 @onready var credit: PanelContainer = $credit
 @onready var center_container: CenterContainer = $CenterContainer
 @onready var tips: RichTextLabel = $CenterContainer/VBoxContainer/Tips
+@onready var make_levels: CanvasLayer = $MakeLevels
+@onready var make_level_button: ChessButton = %MakeLevelButton
 
 var _hover_tweens := {}
 
 func _ready() -> void:
+	make_level_button.visible = Global.make_level_unlocked
 	Music.stop_music()
 	await get_tree().process_frame
 
@@ -96,4 +99,13 @@ func _change_scene(path: String) -> void:
 
 func _on_back_pressed() -> void:
 	credit.visible = false
+	center_container.visible = true
+
+
+func _on_make_level_button_pressed() -> void:
+	make_levels.visible = true
+	center_container.visible = false
+
+func _on_button_pressed() -> void:
+	make_levels.visible = false
 	center_container.visible = true

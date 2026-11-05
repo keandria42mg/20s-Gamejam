@@ -1,8 +1,6 @@
 extends Node2D
 
 @onready var board_view: Node2D = $BoardView
-@onready var level_title: RichTextLabel = $UI/LevelTitle
-@onready var time: RichTextLabel = $UI/Time
 @onready var solved: RichTextLabel = $UI/Solved
 @onready var move_label: RichTextLabel = $UI/MoveLabel
 @onready var quit_panel_container: PanelContainer = $UI/QuitPanelContainer
@@ -16,6 +14,9 @@ extends Node2D
 @onready var red: CPUParticles2D = $UI/Confetti/Red
 @onready var yellow: CPUParticles2D = $UI/Confetti/Yellow
 @onready var white: CPUParticles2D = $UI/Confetti/White
+@onready var level_title: RichTextLabel = $UI/Panel/LevelTitle
+@onready var time: RichTextLabel = $UI/Panel/MarginContainer/Time
+@onready var victory: CanvasLayer = $Victory
 
 var is_paused := false
 
@@ -34,6 +35,8 @@ func _process(_delta: float) -> void:
 	var t := "%.1f" % board_view.time_left
 	var m := "Moves: %d/%d" % [board_view.move_count, board_view.max_moves]
 	var title := "%s" % [board_view.level_name]
+	var main_menu_scene = preload("res://UI/main_menu.tscn")
+	var main_menu_node = main_menu_scene.instantiate()
 
 	level_title.text = title
 	time.text = t
@@ -53,7 +56,11 @@ func _process(_delta: float) -> void:
 
 	if has_node("UI/NextButton"):
 		next_button.visible = board_view.puzzle_won and board_view.level_index < board_view.MAX_LEVEL
-
+		
+	if board_view.puzzle_won and board_view.level_index == board_view.MAX_LEVEL:
+		victory.visible = true
+		Global.make_level_unlocked = true
+		
 func toggle_pause() -> void:
 	is_paused = !is_paused
 	undo_button.disabled = true
@@ -73,4 +80,8 @@ func resume_game() -> void:
 func quit_game() -> void:
 	print("quit")
 	get_tree().paused = false
+	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+
+
+func _on_go_tomenu_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://UI/main_menu.tscn")

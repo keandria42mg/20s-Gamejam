@@ -1,13 +1,19 @@
 {
   "name": "Grand Evolution",
   "time_limit": 20,
-  "max_moves": 12,
+  "max_moves": 11,
   "pieces": [
 	{
 	  "type": "BISHOP",
 	  "side": "PLAYER",
 	  "x": 2,
 	  "y": 4
+	},
+	{
+	  "type": "KING",
+	  "side": "PLAYER",
+	  "x": 4,
+	  "y": 7
 	},
 	{
 	  "type": "BISHOP",

@@ -10,6 +10,12 @@
 	  "y": 3
 	},
 	{
+	  "type": "PAWN",
+	  "side": "PLAYER",
+	  "x": 4,
+	  "y": 4
+	},
+	{
 	  "type": "BISHOP",
 	  "side": "ENEMY",
 	  "x": 1,
